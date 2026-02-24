@@ -33,3 +33,29 @@ function energyHealthDecrease(){
 
 
 setInterval(energyDecrease, 5000);
+
+
+
+let sleeping = false;
+
+function toggleSleep(){
+    sleeping = !sleeping;
+}
+
+let sleepDiv = document.getElementById("sleep-display");
+let sleepButton = document.getElementById("sleep-button");
+
+function updateSleepDisplay() {
+    if (sleeping){
+        sleepDiv.textContent = "Current status: Sleeping";
+        sleepButton.textContent = "Wake";
+    }else{
+        sleepDiv.textContent = "Current status: Awake";
+        sleepButton.textContent="Sleep";
+    }
+}
+updateSleepDisplay();
+sleepButton.addEventListener("click", function(){
+    toggleSleep();
+    updateSleepDisplay();
+});
