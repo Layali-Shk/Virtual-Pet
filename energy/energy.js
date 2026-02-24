@@ -50,7 +50,6 @@ function energyIncrease() {
         energy -= 2;
     }
 
-    // Clamp energy
     if (energy > maxEnergy) energy = maxEnergy;
     if (energy < minEnergy) energy = minEnergy;
 
